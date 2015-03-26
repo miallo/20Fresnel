@@ -10,6 +10,6 @@ all: Prohaupt.tex
 	bibtex Prohaupt
 	pdflatex Prohaupt.tex
 	pdflatex Prohaupt.tex
-	rm -f *.o *.toc *.log *.aux *.bbl *.blg
+	rm -f *.o *.toc *.log *.aux *.bbl *.blg *.out
 clean: 
-	rm -f $(PROG) *.o *.toc *.log *.aux *.bbl *.blg
+	rm -f $(PROG) *.o *.toc *.log *.aux *.bbl *.blg *.out
