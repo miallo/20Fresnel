@@ -199,10 +199,10 @@ wobei $n_i$ der jeweilige Brechungsindex ist und $\alpha$ der Ein- sowie $\beta$
 Da der Sinus jedoch beschränkt ist, kann für einen Übergang vom optisch dichteren ins dünnere ($n_1 > n_2$) ab einem bestimmten kritischen Winkel kein Licht mehr transmitieren.
 Der Übergang ist jedoch nicht schlagartig, sondern folgt nach \cite[S. 238]{demtroeder2} den \textsc{Fresnellschen Formeln}:
 \begin{align}
-	r_s &= -\frac{\sin (\alpha -\beta )}{\sin ( \alpha + \beta )}\\
-	r_p &= \frac{\tan (\alpha - \beta )}{\tan ( \alpha + \beta )}\\
-	t_s &= \frac{2\sin\alpha\sin\beta}{\sin (\alpha +\beta )}\\
-	t_p &= \frac{2\sin\beta\cos\alpha}{\sin ( \alpha + \beta )\cos(\alpha - \beta)}\, .
+	r_s &= -\frac{\sin (\alpha -\beta )}{\sin ( \alpha + \beta )}\label{eq:rs}\\
+	r_p &= \frac{\tan (\alpha - \beta )}{\tan ( \alpha + \beta )}\label{eq:rp}\\
+%	t_s &= \frac{2\sin\alpha\sin\beta}{\sin (\alpha +\beta )}\\
+%	t_p &= \frac{2\sin\beta\cos\alpha}{\sin ( \alpha + \beta )\cos(\alpha - \beta)}\, .
 \end{align}
 Die Reflektionskoeffizienten $r_s$ und $r_p$ sind in Abb. \ref{fig:reflektion} abgebildet.
 
@@ -213,6 +213,19 @@ Die Reflektionskoeffizienten $r_s$ und $r_p$ sind in Abb. \ref{fig:reflektion} a
 	\caption{Reflektionskoeffizienten aufgetragen gegen den Einfallswinkel nach \cite[28.3.2015, 15 Uhr]{lp20}}
 	\label{fig:reflektion}
 \end{figure}
+
+
+\subsection{Brewsterwinkel}
+Laut Gleichung \eqref{eq:rp} verschwindet die Reflektion der parallelen Polarisation falls $\alpha+\beta=45^\circ$, da dann $\tan 45^\circ = \infty$.
+Mit Snellnius ergibt sich als Bedingung für $\alpha$
+\begin{align}
+	\alpha_B=\arctan\frac{n_2}{n_1}\, .
+\end{align}
+Diesen Winkel nennt man \textit{Brewster-Winkel}.
+Als Erklärung hierfür kann man die Atome als Hertzsche Dipole interpretieren, welche auch nicht in alle Richtungen strahlen.
+
+
+
 \section{Durchführung}
 \label{sec:durchfuehrung}
 Für den Versuch wird eine optische Schiene wie in Abb. \ref{fig:schiene} verwendet, welche sich am Anfang gerade auf $0^\circ $  befindet.
@@ -235,6 +248,13 @@ Zur Ermittlung des Brewster-Winkels werden nun der Polarisator wieder um $45^\ci
 Dann wird der Auslenkwinkel der Schiene gesucht und notiert, bei welcher die geringste Intensität zu sehen ist.
 Hierbei empfielt es sich, abwechseld mit dem Versuchspartner die Messung durchzuführen.
 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics{aufbau}
+	\caption{Aufbau des Versuchs von \cite[25.3.2015, 15 Uhr]{lp20}.}
+	\label{fig:schiene}
+\end{figure}<++>
 
 \section{Auswertung}
 \label{sec:auswertung}
@@ -326,6 +346,13 @@ In Tabelle \ref{tab:brewster} sind die Werte eingetragen.
 
 \section{Diskussion}
 \label{sec:diskussion}
+In Abbildung \ref{fig:drehung} ist ein klarer Sprung bei einem Auslenkwinkel von $\alpha=70^\circ$ in der Kurve zu erkennen.
+Dieser könnte dadurch hervorgerufen worden sein, dass die ersten Werte alle um $5^\circ$ zu niedrig waren.
+An einer Stelle war auch in den Daten schon ein Sprung zu sehen, den wir jedoch nicht weiter untersucht haben.
+Allerdings könnte auch ein verrutschtes Prisma dies hervorrufen.
+
+
+
 
 
 \bibliography{literatur} 
