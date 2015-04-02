@@ -193,7 +193,7 @@ Diese nennt man dann parallel ($E_p$) und senkrecht ($E_s$).
 \subsection{Reflektion an Grenzflächen}
 Nach dem \textit{Snellnius}'schen Brechungsgesetz gilt für die Brechung an einer Oberfläche
 \begin{align}
-	n_1\cdot\sin\alpha=n_2\cdot\sin\beta
+	n_1\cdot\sin\alpha=n_2\cdot\sin\beta\label{eq:snellnius}
 \end{align}
 wobei $n_i$ der jeweilige Brechungsindex ist und $\alpha$ der Ein- sowie $\beta$ der Ausfallwinkel des Lichts ist.
 Da der Sinus jedoch beschränkt ist, kann für einen Übergang vom optisch dichteren ins dünnere ($n_1 > n_2$) ab einem bestimmten kritischen Winkel kein Licht mehr transmitieren.
@@ -238,6 +238,90 @@ Hierbei empfielt es sich, abwechseld mit dem Versuchspartner die Messung durchzu
 
 \section{Auswertung}
 \label{sec:auswertung}
+Bei dem Versuch ist stets $n_1 =1$ der Brechungsindex der Luft und $n=1.51\pm 0.01$ der Literaturwert des Prismas, welcher vermessen werden soll.
+Da der Drehteller mit dem Prisma sich bei der Auslenkung des Hebelarms um den halben Winkel dreht, muss zunächst der gemessene Winkel $\Phi$ umgerechnet werden in den tatsächlichen:
+\begin{align*}
+	\alpha = 90^\circ - \frac{\Phi}{2}\, .
+\end{align*}
+
+\subsection{Drehung der Schwingungsebene}
+Der von der Lampe ausgesandte Strahl ist nicht polarisiert.
+Trifft er aber auf das Nicolsche Prisma, so werden die unterschiedlichen Polarisationsrichtungen unterschiedlich stark reflektiert, wodurch der ausfallende Strahl eine bestimmte Polarisationsrichtung bekommt.
+Diese ist durch die Formel 
+\begin{align}
+	\tan (\gamma +45^\circ)=\frac{r_s}{r_p}=\frac{\cos(\alpha-\beta)}{\cos (\alpha +\beta)}\label{eq:drehung}
+\end{align}
+bestimmt, welche nach Gleichung \ref{eq:snellnius} nur von dem Verhältnis der beiden Brechungsindizes abhängt.
+
+Es war keine direkte Bestimmung der Drehungsebene möglich.
+Daher konnte sie nur indirekt bestimmt werden, da bei einem Einfallswinkel von $90^\circ$ das Licht nicht gedreht wird, da beide Polarisationsebenen voll reflektiert werden ($\gamma=0^\circ$).
+
+In Abb. \ref{fig:drehung} wird der Drehwinkel, welcher einen Fehler von $0.2^\circ$ aufweist, gegen den Auftreffwinkel, sowie die Theoriekurve mit $n=1.51$ aufgetragen.
+Der Fit der Theoriekurve mit variablem $n$ liefert
+\begin{align*}
+	n=1.405\pm 0.019
+\end{align*}
+\begin{figure}[h]
+	\centering
+	\input{drehung}
+	\caption{Drehwinkel $\gamma$ gegen den Auftreffwinkel $\alpha$ aufgetragen.}
+	\label{fig:drehung}
+\end{figure}
+
+\subsection{Brechungsindex bei $\gamma=45^\circ$}
+Der Brewsterwinkel $\alpha_B$ liegt gerade bei einem Drehwinkel von $\gamma=45^\circ$, da dort laut Gleichung \eqref{eq:drehung} $\cos (\alpha + \beta) = 0 \Rightarrow \alpha + \beta = 90^\circ$ ist.
+In Abb. \ref{fig:brewster} sind die umliegenden Werte aufgetragen, so dass mit Hilfe einer linearen Regression der Brewsterwinkel bestimmt werden kann.
+Die so ermittelte Geradensteigung ist $m=-1.283\pm 0.029$ und der $y$-Achsenabschnitt beträgt $b=(114.1\pm 1.6)^\circ$.
+Die daraus berechnete Gerade beträgt damit
+\begin{align}
+	\alpha_B&=\frac{b-45^\circ}{m} = (53.8\pm 1.8)^\circ\\
+	\sigma_{\alpha_B}&=\sqrt{\left( \frac{\sigma_b}{m} \right)^2 + \left( \frac{\sigma_m(b-45^\circ)}{m^2} \right)^2}
+\end{align}
+wobei sich der Fehler nach der Gaußschen Fehlerfortpflanzung berechnet.
+Der Brechungsindex, der sich daraus ergibt, hat einen Fehler von
+\begin{align*}
+	\sigma_n=\frac{\sigma_\alpha}{\cos ^2\alpha}
+\end{align*}
+und beträgt 
+\begin{align}
+	n=1.37\pm 0.10\, .
+\end{align}
+
+
+
+\begin{figure}[h]
+	\centering
+	\input{drehung_zoom}
+	\caption{<+caption text+>}
+	\label{fig:brewster}
+\end{figure}<++>
+
+\subsection{Brewsterwinkel}
+Die Messung des Brewsterwinkels wurde zweimal gemacht: die ersten 6 Werte wurden mit unverstelltem Polarisator gemacht.
+Da dabei das Minimum nicht scharf zu sehen war, wurde danach der Polarisator um ca. $5^\circ$ verdreht, wodurch die Messung erheblich genauer wurde.
+Hiermit wurden 4 Werte aufgezeichnet.
+Diese können nun auf verschiedene Weise ausgewertet werden: die einzelnen Messreihen und die einzelnen Versuchspartner.
+
+In Tabelle \ref{tab:brewster} sind die Werte eingetragen.
+
+\begin{table}[!htb]
+\centering
+\begin{tabular}{|c|c|c|c|}
+         \hline
+         & $\Phi_B$ [$^\circ$] & $\alpha_B$ [$^\circ$] & $n$ \\
+         \hline
+         Alle Werte & $66.6 \pm 0.6$ & $56.7 \pm 0.3$ & $1.522 \pm 0.018$ \\
+         erste Messreihe & $66.4 \pm 0.9$ & $56.8 \pm 0.5$ & $1.53 \pm 0.03$ \\
+         zweite Messreihe & $67.0 \pm 0.5$ & $56.50 \pm 0.25$ & $1.511 \pm 0.015$ \\
+         \hline
+         Michael & $67.3 \pm 0.5$ & $56.35 \pm 0.25$ & $1.502 \pm 0.015$ \\
+         Felix & $65.9 \pm 1.0$ & $57.1 \pm 0.5$ & $1.55 \pm 0.03$ \\
+         \hline
+\end{tabular}
+\caption{Brewster-Winkel.}
+\label{tab:brewster}
+\end{table}
+
 
 
 \section{Diskussion}
